@@ -1,9 +1,12 @@
 const express = require("express");
 const path = require("path");
+// import { BrowserRouter as Router, Route} from "react-router-dom"; only here as a reminder!!
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+app.use(morgan("dev"));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
